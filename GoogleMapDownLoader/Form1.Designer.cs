@@ -133,6 +133,7 @@
             // radioButton7
             // 
             this.radioButton7.AutoSize = true;
+            this.radioButton7.Checked = true;
             this.radioButton7.Location = new System.Drawing.Point(465, 79);
             this.radioButton7.Name = "radioButton7";
             this.radioButton7.Size = new System.Drawing.Size(83, 16);
@@ -144,12 +145,10 @@
             // radioButton6
             // 
             this.radioButton6.AutoSize = true;
-            this.radioButton6.Checked = true;
             this.radioButton6.Location = new System.Drawing.Point(465, 52);
             this.radioButton6.Name = "radioButton6";
             this.radioButton6.Size = new System.Drawing.Size(83, 16);
             this.radioButton6.TabIndex = 12;
-            this.radioButton6.TabStop = true;
             this.radioButton6.Text = "国内服务器";
             this.radioButton6.UseVisualStyleBackColor = true;
             // 
@@ -317,10 +316,12 @@
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
+            this.radioButton3.Checked = true;
             this.radioButton3.Location = new System.Drawing.Point(176, 20);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(119, 16);
             this.radioButton3.TabIndex = 2;
+            this.radioButton3.TabStop = true;
             this.radioButton3.Tag = "3";
             this.radioButton3.Text = "卫星图（带标签）";
             this.radioButton3.UseVisualStyleBackColor = true;
@@ -339,12 +340,10 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Checked = true;
             this.radioButton1.Location = new System.Drawing.Point(32, 20);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(59, 16);
             this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
             this.radioButton1.Tag = "1";
             this.radioButton1.Text = "路线图";
             this.radioButton1.UseVisualStyleBackColor = true;

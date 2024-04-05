@@ -16,7 +16,7 @@ namespace GoogleMapDownLoader
     public partial class Form1 : Form
     {
         ArrayList _waittodownload = new ArrayList();  //待下载图片集合
-        string _path=""; //保存路径
+        string _path= "H:\\Github\\WPF-Map\\Source\\Controls\\HeBianGu.Map.Google.China\\Data"; //保存路径
         int _thread = 0;  //下载线程数目
         int _downloadnum = 0;  //已下载图片张数
         int _zoom=0;  //缩放级别
@@ -28,6 +28,7 @@ namespace GoogleMapDownLoader
         public Form1()
         {
             InitializeComponent();
+            txtPath.Text = "H:\\Github\\WPF-Map\\Source\\Controls\\HeBianGu.Map.Google.China\\Data";
         }
         /// <summary>
         /// 浏览保存目录
@@ -41,6 +42,7 @@ namespace GoogleMapDownLoader
                 if (fb.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
                     txtPath.Text = fb.SelectedPath;
+
                 }
             }
         }
@@ -191,6 +193,7 @@ namespace GoogleMapDownLoader
                 {
                     url += "p";
                 }
+                url += "&hl=zh-CN&gl=CN&src=app";
                 return url;
             }
             if (radioButton6.Checked)  //国内服务器  类似 http://mt0.google.cn/vt/lyrs=m@234000000&hl=zh-CN&gl=CN&src=app&x=0&y=0&z=0
@@ -286,8 +289,12 @@ namespace GoogleMapDownLoader
                         url += "&x=" + ri.x.ToString().Trim();  //列
                         url += "&y=" + ri.y.ToString().Trim();  //行
                         url += "&z=" + ri.z.ToString().Trim();  //缩放级别
-                        Bitmap map = DownloadImage(url);
                         string file = _path + "\\" + ri.z.ToString() + "_" + ri.x.ToString() + "_" + ri.y.ToString() + ".jpg";
+                        if(File.Exists(file))
+                        {
+                            continue;
+                        }
+                        Bitmap map = DownloadImage(url);
                         ri.Bitmap = map;
                         //文件保存格式 “缩放级别_列_行.jpg”
                         map.Save(file, System.Drawing.Imaging.ImageFormat.Jpeg);
